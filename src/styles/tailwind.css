@@ -1,0 +1,38 @@
+/* CSS Variables - Design Tokens (kept for reference, actual styles in app.css) */
+:root {
+  --primary-background: #fe481c;
+  --primary-foreground: #ffffff;
+  --primary-light: #fe682f;
+  --primary-dark: #fe481c;
+  --secondary-background: #ffd100;
+  --secondary-foreground: #262626;
+  --text-primary: #262626;
+  --text-secondary: #000000;
+  --text-muted: #7d7d7d;
+  --text-accent: #fe481c;
+  --text-light: #ffffff;
+  --text-highlight: #ffd100;
+  --text-overlay: #26262699;
+  --text-subtle: #ffffff99;
+  --text-cream: #f6ecd4;
+  --text-transparent: #e2e2e299;
+  --bg-main: #fbf6eb;
+  --bg-card: #ffffff;
+  --bg-dark: #262626;
+  --bg-muted: #d9d9d9;
+  --bg-accent-primary: #fe481c;
+  --bg-accent-secondary: #ffd100;
+  --bg-blue-primary: #0297d7;
+  --bg-blue-light: #0590ce;
+  --bg-blue-medium: #068fd0;
+  --bg-blue-dark: #0487c1;
+  --border-primary: #fe481c;
+  --border-muted: #7d7d7d;
+  --border-light: #fbf6eb;
+  --font-primary: 'Poppins', sans-serif;
+  --font-display: 'Russo One', sans-serif;
+  --font-stretch: 'Stretch Pro', sans-serif;
+  --radius-xs: 1px;
+  --radius-sm: 4px;
+  --radius-lg: 24px;
+}
