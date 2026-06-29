@@ -1,13 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/ui/Button';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const CaseStudySection = () => {
+  const navigate  = useNavigate();
+  const leftRef   = useScrollAnimation();
+  const rightRef  = useScrollAnimation();
+
   return (
     <section className="case-study-section">
       <div className="container-narrow">
         <div className="case-study-inner">
           {/* Left Content */}
-          <div className="case-study-left">
+          <div ref={leftRef} className="case-study-left anim-fade-left">
             <span className="case-study-badge">Case Studies</span>
 
             <h2 className="case-study-title">
@@ -23,11 +29,18 @@ const CaseStudySection = () => {
               <img src="/images/img_vector_gray_900_18x18.svg" alt="Instagram" style={{ width: '18px', height: '18px' }} />
             </div>
 
-            <Button text="Hire me" onClick={() => {}} fill_background_color="default" text_color="default" text_font_size="default" border_border="default" />
+            <Button
+              text="View Case Study"
+              onClick={() => navigate('/case-study/dotpixel')}
+              fill_background_color="default"
+              text_color="default"
+              text_font_size="default"
+              border_border="default"
+            />
           </div>
 
           {/* Right Images Stack */}
-          <div className="case-study-right">
+          <div ref={rightRef} className="case-study-right anim-fade-right anim-delay-2">
             <div className="case-study-images">
               {/* Back Image */}
               <div className="case-study-img-back">

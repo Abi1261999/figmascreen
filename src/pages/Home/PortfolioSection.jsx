@@ -1,13 +1,19 @@
 import Star from '../../components/ui/Star';
 import React from 'react';
 import Line from '../../components/ui/Line';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const PortfolioSection = () => {
+  const headerRef = useScrollAnimation();
+  const card1Ref  = useScrollAnimation();
+  const card2Ref  = useScrollAnimation();
+  const card3Ref  = useScrollAnimation();
+
   return (
     <section className="portfolio-section">
       <div className="container">
         {/* Section Header */}
-        <div className="portfolio-header">
+        <div ref={headerRef} className="portfolio-header anim-fade-up">
           <div className="portfolio-header-left">
             <span className="portfolio-badge">Make it Live</span>
             <div className="portfolio-categories">
@@ -27,13 +33,13 @@ const PortfolioSection = () => {
         <div className="portfolio-grid-wrapper">
           <div className="portfolio-grid">
             {/* Card 1 */}
-            <div className="portfolio-card portfolio-card-1">
+            <div ref={card1Ref} className="portfolio-card portfolio-card-1 anim-fade-up anim-delay-1">
               <img src="/images/img_sincerely_media.png" alt="Branding Website" className="cover" />
               <p className="portfolio-card-title">Branding Website</p>
             </div>
 
             {/* Card 2 - Center Featured */}
-            <div className="portfolio-card portfolio-card-2">
+            <div ref={card2Ref} className="portfolio-card portfolio-card-2 anim-scale-in anim-delay-2">
               <div className="portfolio-card-2-bg">
                 <div
                   className="portfolio-card-2-bg-overlay"
@@ -54,7 +60,7 @@ const PortfolioSection = () => {
             </div>
 
             {/* Card 3 - Right Side with Icon */}
-            <div className="portfolio-card portfolio-card-3">
+            <div ref={card3Ref} className="portfolio-card portfolio-card-3 anim-fade-up anim-delay-3">
               <div
                 className="portfolio-card-3-icon"
                 style={{ backgroundImage: 'url(/images/img_group_31.svg)' }}

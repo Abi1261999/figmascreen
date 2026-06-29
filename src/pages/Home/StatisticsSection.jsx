@@ -1,8 +1,11 @@
 import React from 'react';
 import Button from '../../components/ui/Button';
-
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const StatisticsSection = () => {
+  const leftRef   = useScrollAnimation();
+  const centerRef = useScrollAnimation();
+
   const projectStats = [
     { label: 'Mobile Application', count: '60', icon: '/images/img_vector_white_a700.svg' },
     { label: 'Branding Design', count: '100', icon: '/images/img_vector_white_a700.svg' },
@@ -14,13 +17,13 @@ const StatisticsSection = () => {
       <div className="container">
         <div className="statistics-inner">
           {/* Left Stats - +100 */}
-          <div className="stats-left">
+          <div ref={leftRef} className="stats-left anim-fade-left">
             <h3 className="stats-number">+100</h3>
             <p className="stats-label">Client Works Developed In<br />World-Wide</p>
           </div>
 
           {/* Center Stats */}
-          <div className="stats-center">
+          <div ref={centerRef} className="stats-center anim-fade-up anim-delay-2">
             {/* 457 Projects Completed */}
             <div className="stats-completed">
               <h3 className="stats-number">457</h3>

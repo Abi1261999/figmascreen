@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const FAQSection = () => {
   const [expandedFAQ, setExpandedFAQ] = useState(0);
+  const titleRef   = useScrollAnimation();
+  const contentRef = useScrollAnimation();
 
   const mainFAQ = {
     question: 'What is average cost of the project?',
@@ -20,11 +23,11 @@ const FAQSection = () => {
   return (
     <section className="faq-section">
       <div className="container-narrow">
-        <h2 className="faq-title">FAQs</h2>
+        <h2 ref={titleRef} className="faq-title anim-fade-up">FAQs</h2>
         <div className="faq-divider" />
 
         {/* FAQ Content */}
-        <div className="faq-content">
+        <div ref={contentRef} className="faq-content anim-fade-up anim-delay-2">
           {/* Main FAQ */}
           <div className="faq-main">
             <div className="faq-main-header">

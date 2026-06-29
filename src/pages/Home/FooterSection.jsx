@@ -1,6 +1,9 @@
 import React from 'react';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const FooterSection = () => {
+  const footerRef = useScrollAnimation();
+
   const navLinks = ['About Me', 'Contact', 'Portfolio', 'Privacy Policy'];
 
   const socialIcons = [
@@ -13,7 +16,7 @@ const FooterSection = () => {
 
   return (
     <footer className="footer-section">
-      <div className="footer-bg">
+      <div ref={footerRef} className="footer-bg anim-fade-up">
         <div className="footer-layout">
           {/* Left: Decorative star/clock element */}
           <div className="footer-left-decor">

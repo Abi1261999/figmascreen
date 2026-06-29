@@ -1,21 +1,26 @@
 import React from 'react';
 import Button from '../../components/ui/Button';
 import Star from '../../components/ui/Star';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const HeroSection = () => {
+  const leftRef  = useScrollAnimation();
+  const rightRef = useScrollAnimation();
+  const bgRef    = useScrollAnimation();
+
   return (
     <section className="hero-section">
       <div className="container">
         <div className="hero-inner">
           {/* Large UX Text Background */}
-          <div className="hero-bg-text">
+          <div ref={bgRef} className="hero-bg-text anim-fade-in">
             <h2 aria-hidden="true">UX</h2>
           </div>
 
           {/* Main Content Container */}
           <div className="hero-content">
             {/* Left Content */}
-            <div className="hero-left">
+            <div ref={leftRef} className="hero-left anim-fade-left">
               <div className="hero-title-wrapper">
                 <h1 className="hero-title">
                   Hi, I'm Tayler<br />
@@ -71,7 +76,7 @@ const HeroSection = () => {
             </div>
 
             {/* Right Content - Image */}
-            <div className="hero-right">
+            <div ref={rightRef} className="hero-right anim-fade-right">
               <img
                 src="/images/img_handsome_isolat.png"
                 alt="Tayler - Creative Designer"
